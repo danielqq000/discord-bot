@@ -18,6 +18,11 @@ class Character(commands.Cog):
     @commands.command()
     async def profile(self, ctx):
         """顯示玩家角色的資料"""
+        try:
+            await ctx.send("profile called")
+        except:
+            await ctx.send("profile failed")
+
         character = get_character(ctx.author.id)
         if character:
             profile = (f'角色名: {character["name"]}\n'
@@ -31,5 +36,5 @@ class Character(commands.Cog):
         else:
             await ctx.send(f'{ctx.author.mention}, 你還沒有角色！使用 !start [角色名字] 創建一個角色。')
 
-def setup(bot):
-    bot.add_cog(Character(bot))
+async def setup(bot):
+    await bot.add_cog(Character(bot))
