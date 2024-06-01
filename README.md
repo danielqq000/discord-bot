@@ -24,6 +24,7 @@ discord_rpg_bot/
 │   ├── __init__.py
 │   ├── character.py
 │   ├── adventure.py
+│   ├── greetings.py
 ├── data/
 │   ├── __init__.py
 │   ├── player_data.json
